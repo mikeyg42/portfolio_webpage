@@ -1,0 +1,77 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
+// Override Bootstrap variables here
+$navbar-padding-y: 1rem;  // Increase vertical padding
+$navbar-brand-font-size: 1.5rem;  // Increase brand font size
+$navbar-brand-margin-end: 1.5rem; // Add margin to separate brand from nav items
+
+// Import Bootstrap's main SCSS file
+@import "bootstrap/scss/bootstrap";
+
+:root {
+    /* Background Colors */
+    --background-dark:#69212d;
+    --background-light:	#ffa2b6; 
+    --bio-box-background: #dcfcff;
+    --card-color: #efb11d;
+    --side-bar-color:#D6536d ;
+  
+     /* accent colors */
+    --accent:	#e43d12; 
+    --accent2:	#ebe9e1;
+    --accent-hover:#45A29e;
+  
+    /* Text Colors */ 
+    --text-dark: #191919;
+    --text-light:	#fff3d0;
+    --text-color-accent: #00008B;
+  
+    /* Social Media Colors */
+    --github-color: #1f1c1c;
+    --github-hover: #675d5d;
+    --linkedin-color: #0077b5;
+    --linkedin-hover: #8ed8ff ;
+    --download-button-color:#643b9f;
+    
+   /* Grid and Layout Variables */
+   --sidebar-width: 550px;       /* Sidebar width */
+   --sidebar-min-width: 520px;
+   --outer-padding: 35px;        /* Padding around the grid */
+   --grid-gap: 15px;             /* Gap between grid items */
+   --min-column-width: 500px;    /* Minimum width for each grid item */
+   --footer-height:150px
+  }
+
+/* --------------  GOOGLE FONTS ----------- */
+.manjari-regular {
+    font-family: Manjari, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .rampart-one-regular {
+    font-family: Rampart One, sans-serif;
+    font-weight: 450;
+    font-style: normal;
+  }
+  
+  .audiowide-regular {
+    font-family: Audiowide, serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
+/* ------------ Global Styling ------------- */
+body {
+    font-family: Manjari, sans-serif;
+    color: var(--text-dark); 
+    overflow-x: hidden; 
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;   
+    text-align: left;
+ //   text-justify: inter-word;
+  }
+  

@@ -1,0 +1,626 @@
+/* src/app/app.component.scss */
+@import 'src/app/_bootstrap-imports.scss';
+
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  overflow-x:-hidden;
+}
+
+/* Side Banner Styling */
+
+.side-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: clamp(var(sidebar-min-width), var(--sidebar-width),700);
+  height: 100vh;
+  background: var(--side-bar-color);
+  padding: 20px;
+  overflow-y: auto;
+
+  @media (min-width: var(--sidebar-min-width)) { 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: clamp(var(--sidebar-min-width), min(var(--sidebar-width), 10vw), 500);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.side-banner-content {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+
+.header-title {
+  font-family: Rampart One, sans-serif;
+  font-size: 3.6rem;
+  margin-bottom: 1rem;
+  margin-top: 40px;
+  text-align: center;  
+  color: var(--text-dark);  
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  text-shadow:     
+  1px 1px 10px white,
+  -1px -1px 15px white,
+  0 1px 50px rgb(213 243 249),
+  0 0 1.2em rgb(255 229 251);
+  filter: drop-shadow(0 0 10px white) drop-shadow(0 0 35px rgb(122 233 255 / 99%));
+}
+
+.profile-pic {
+  width: 270px;
+  height: 270px;
+  border-radius: 50%;
+  cursor: pointer;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+
+}
+
+.profile-pic:hover {
+  transform: scale(1.25);
+}
+
+.bio-box {
+  background-color: var(--bio-box-background);
+  padding: 40px;
+  margin-bottom: calc(var(--footer-height) + 30px);
+  border-radius: 10px;
+  
+  max-width: calc(var(--sidebar-width) - 80px);
+  @media (max-width: 991.98px) {
+    font-size: 0.8rem;
+    padding: 10px;
+  }
+  @media (max-width:600px) {
+      // WHAAHH lost this ?
+  }
+}
+
+.bio-text {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+}
+
+.bio-text p {
+  margin-bottom: 2rem;
+
+  font-size:large;
+}
+
+.bio-text p:last-child {
+  margin-bottom: 0; /* Remove bottom margin from the last paragraph */
+}
+
+.bio-text em {
+  font-style: italic;
+  color: var(--text-dark);
+}
+
+.bio-text a {
+  color: var(--text-color-accent);
+  font-style: bold;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  width: 100%;
+  font-family: Audiowide, serif;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.download-resume-btn,
+.social-btn {
+  justify-content: center;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--download-button-color);
+  color: var(--text-light);
+  padding: 15px 40px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 1.3rem; 
+}
+
+.download-resume-btn:hover,
+.social-btn:hover {
+  background-color: var(--accent-hover);
+}
+
+.download-resume-btn i,
+.social-btn i {
+  margin-right: 8px;
+}
+
+.github-btn {
+  background-color: var(--github-color);
+  font-size: 1.3rem;
+}
+
+.github-btn:hover {
+  background-color: var(--github-hover);
+}
+
+.linkedin-btn {
+  background-color: var(--linkedin-color);
+  font-size: 1.3rem;
+}
+
+.linkedin-btn:hover {
+  background-color: var(--linkedin-hover);
+}
+
+.custom-navbar {
+  background-color:var(--side-bar-color);
+}
+
+.custom-navbar .navbar-toggler {
+  //font-family: Audiowide, serif;
+  border-color: var(--accent);
+}
+
+.custom-navbar .nav-item {
+  padding-top: 15px;
+}
+
+.custom-navbar .navbar-toggler-icon {
+  &::before {
+    content: "\F31F"; // This is the cake2 icon unicode
+    font-family: "bootstrap-icons";
+    color: violet; // or whatever color you want
+    font-size: 1.5rrem; // adjust size as needed
+  }
+  background-image: none; // Remove the default hamburger icon
+}
+
+.custom-navbar .navbar-toggler-icon:hover {
+  &::before {
+    content: "\F735"
+  }
+}
+
+.custom-navbar .nav-link {
+  color: var(--text-color-light);;
+  font-family: Audiowide, serif;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover {
+  color: var(--accent-hover);
+}
+
+.custom-navbar .navbar-title {
+  font-family: Rampart One, sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 1.7rem;
+  text-align: center;  
+  color: var(--text-dark);  
+  transition: transform 0.3s ease;
+  text-wrap: pretty;
+  text-shadow:     
+    1px 1px 10px white,
+    -1px -1px 15px white,
+    0 1px 50px rgb(213 243 249),
+    0 0 1.2em rgb(255 229 251);
+  filter: drop-shadow(0 0 10px white) drop-shadow(0 0 35px rgb(122 233 255 / 99%));
+}
+
+.custom-navbar .navbar-text .bio-text {
+  background-color: var(--bio-box-background);
+  color: var(--text-dark);
+  padding: 10px;
+}
+
+.custom-navbar .navbar-text .bio-text p {
+  margin-bottom: 1em;
+}
+
+main {
+  @include media-breakpoint-up(lg) {
+    margin-left: var(--sidebar-width);
+  }
+}
+
+/* Main Content Area */
+.main-content {
+  top: 0;
+  left: var(sidebar-width);
+  position: fixed;
+  padding: 2rem 2rem;
+  background-color: var(--text-light);
+  box-sizing: border-box;
+  min-height: 100vh; /* Ensure main content is at least viewport height */
+  overflow-y: auto; /* Enable scrolling */
+  max-width: 100%-min(10vw, var(--sidebar-width));
+ 
+  /* Add media query for medium and larger screens */
+  @media (min-width: var(--breakpoint)) {
+    margin-left: min(300, 20%);
+  }
+
+  /* No left margin on small screens */
+  @media (max-width: var(--just-below-breakpoint)) {
+    margin-left: 0;
+  }
+}
+
+.authors-label,
+.abstract-label {
+  font-size: 1.2rem; /* Slightly larger font size */
+  color: blue; /* Make the text blue */
+}
+
+h1, h2, h3, h4 {
+  color: var(--text-dark);
+}
+
+.articles-section h2,
+.abstracts-section h2 {
+  font-family: Rampart One, sans-serif;
+  margin: 10px;  
+  padding-bottom: 1.5rem;
+  position: relative;
+  z-index: 1001;
+  color: var(--text-dark); 
+  background: none;
+  text-shadow:     
+  1px 1px 10px white,
+  -1px -1px 15px white,
+  0 1px 50px #FAF9F6;
+  filter: drop-shadow(0 0 10px white) drop-shadow(0 0 35px rgb(122 233 255 / 99%));
+}
+
+.articles-section h2::after,
+.abstracts-section h2::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -25px; 
+  width: 50px;            
+  height: 30px;  
+  font-size: 2.2rem;
+  text-align: left;
+  padding: 40px 20px;
+}
+
+body, p {
+  font-family: Manjari, sans-serif;
+  line-height: 125%;
+  color:var(--text-dark); 
+  text-align: left;
+  font-size: clamp(14px, 1.5vw, 18px);
+}
+
+/* Articles and Abstracts Sections */
+.articles-section {
+  background: linear-gradient( to bottom,#f4eff6,#f5d8ed);
+  margin-right: 20px;
+}
+
+.abstracts-section {
+  background: linear-gradient( to top,#f4eff6,#f5d8ed);
+  margin-right: 20px;
+}
+
+.sub-section-title {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.sub-section-title svg {
+  width: 100%;  
+  max-width: 600px;  
+  height: auto;
+}
+
+.sub-section-title text {
+  font-family: Rampart One, sans-serif;
+  font-size: 500px;
+  fill: var(--text-dark);
+}
+
+.publication-list {
+  display: grid;
+  gap: var(--grid-gap);
+  padding: var(--outer-padding);
+  box-sizing: border-box;
+  grid-auto-rows: row dense;
+  grid-column-end: auto;
+}
+
+.publication-item {
+  display: flex;
+  justify-content: center;
+}
+
+.publication-card {
+  background-color: var(--card-color);;
+  border-radius: 10px;
+  row-gap: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgb(5 5 5 / 20%);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: max-height 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.publication-card .initial-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.publication-card.expanded {
+  min-width:600px;
+  max-height: 55vh;
+  overflow-y: auto;
+  transition: max-height 0.3s ease, overflow-y 0.3s ease;
+  scroll-behavior: smooth;
+}
+
+.publication-card .content> * {
+  flex: 1;
+}
+
+.publication-card h4 {
+  font-weight:bold;
+  margin-top: 15px;
+  color: var(--text-color-accent);
+  font-size: clamp(1.4em, 2em, 2.4em);
+  transition: font-weight 0.3s ease;
+}
+
+.publication-card.expanded::-webkit-scrollbar {
+  width: 8px;
+}
+
+.publication-card.expanded::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.publication-card.expanded::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.publication-card.expanded::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.publication-card:hover {
+  transform: translateY(-25px) scale(1.05);
+  box-shadow: 0 8px 16px rgb(5 5 5 / 10%);
+  background-color: #ffecc0;
+}
+
+.journal-year,
+.meeting-year {
+  font-size: clamp(1.3em, 1.6em, 1.7em);
+  color: var(--title-color);
+  margin: 5px 0;
+  font-style: italic;
+}
+
+.journal-year .year,
+.meeting-year .year{
+  font-style: normal;
+  margin-left: 5px;
+}
+
+/* Media Styling */
+.pub-image,
+.pub-video {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.pub-image:hover,
+.pub-video:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/* Toggle Abstract Button */
+.toggle-abstract {
+  background-color: transparent;
+  border: none;
+  color: var(--button-background-color);
+  cursor: pointer;
+  font-size: 1.6rem;
+  margin-top: 10px;
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.toggle-abstract:hover {
+  color: var(--button-hover-color);
+  transform: scale(1.1);
+}
+
+.toggle-abstract i {
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.toggle-abstract[aria-expanded='true'] i {
+  transform: rotate(180deg);
+}
+
+/* Abstract Content */
+.abstract-content {
+  line-height: 110%;
+  color: var(--text-dark);
+}
+
+.abstract-content .authors {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  color: var(--text-color);
+  width: min(1.25em, calc(70% + 1.1em));
+}
+
+.publication-abstract {
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+
+}
+
+.publication-links {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 10px;
+  padding-bottom: 1rem;
+}
+
+/* Publication Links Styling */
+.publication-links a {
+  text-decoration: none;
+  font-family: Audiowide, serif;
+  font-size: 1.2rem;
+  color: var(--download-button-color);
+  transition: color 0.3s ease, transform 0.3s ease;
+  
+}
+
+.publication-links a:hover {
+  color: var(--accent-hover);
+  transform: scale(1.04);
+}
+
+.journal-link, .download-btn {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.6rem;
+}
+
+/* Footer Styling */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer-content p {
+  font-family: Audiowide, serif;
+  padding: 40px 0;
+  margin:0;
+  color: var(--text-light);
+  background-color: var(--background-dark);
+  text-align: center;
+  font-size: 1.6rem;
+  height: var(--footer-height);
+}
+
+@media (max-width: var(--breakpoint)) {
+  .header-title {
+    font-size: 1.4rem;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+
+  .publication-card {
+    padding: 15px;
+  }
+
+  .side-banner .profile-pic {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .bio-box {
+    padding: 10px;
+  }
+  
+  .button-group {
+    flex-direction: column;
+    row-gap: 5px;
+  }
+
+}
+/* For screens smaller than 768px */
+@media (max-width: 767.98px) {
+  .publication-list {
+    grid-template-columns: 1fr;
+  }
+
+  .main-content {
+    padding: 15px;
+  }
+
+  .publication-card {
+    padding: 15px;
+  }
+}
+
+/* For screens smaller than 480px */
+@media (max-width: 479.98px) {
+  .main-content {
+    padding: 10px;
+  }
+
+  .publication-card {
+    padding: 10px;
+  }
+
+  .toggle-abstract {
+    font-size: 1.2rem;
+  }
+
+  .side-banner {
+    position: relative;
+    width: 20%;
+    height: auto;
+    display: block;
+    padding: 10px;
+  }
+
+  /* Hide the bio-box on mobile devices */
+  .bio-box {
+    display: none;
+  }
+
+  /* Adjust the profile picture size */
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
